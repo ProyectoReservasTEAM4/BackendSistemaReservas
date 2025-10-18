@@ -48,16 +48,21 @@ public class PeliculasService implements IPeliculasService {
     }
 
     @Override
-    public Peliculas actualizar(Long id, String titulo, int duracion, String genero, String idiomas,String imagen) {
+    public Peliculas actualizar(Long id, String titulo, Date año, String descripcion, int duracion, String genero, String director, String idiomas, String imagen, String estado) {
         Optional<Peliculas> actualiz = findById(id);
         if (actualiz.isPresent()){
             Peliculas peliculas = actualiz.get();
             if (peliculas != null){
                 peliculas.setTitulo(titulo);
+                peliculas.setAño(año);
+                peliculas.setDescripcion(descripcion);
                 peliculas.setDuracion(duracion);
                 peliculas.setGenero(genero);
+                peliculas.setDirector(director);
                 peliculas.setIdiomas(idiomas);
                 peliculas.setImagen(imagen);
+                peliculas.setEstado(estado);
+                return peliculas;
             }
         }
         return null;

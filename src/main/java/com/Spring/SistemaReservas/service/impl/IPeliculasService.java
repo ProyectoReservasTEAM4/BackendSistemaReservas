@@ -12,7 +12,7 @@ public interface IPeliculasService {
                     int duracion, String genero, String director,
                     String idiomas, String imagen, String estado);
 
-    Peliculas actualizar(Long id, String titulo, int duracion, String genero, String idiomas,String imagen);
+    Peliculas actualizar(Long id, String titulo, Date año, String descripcion, int duracion, String genero, String director, String idiomas, String imagen, String estado);
 
 
 }
